@@ -15,7 +15,7 @@ def main_gui():
     #Cria Plat grafica
     root = Tk()
     root.title("Protótipo Íris")
-    root.configure(background = "blue")
+    root.configure(background = "Gray")
     
     buttonA = Button(root,width = 30 , text = "ADD")
     buttonA["command"] = partial(pegar_imagem,buttonA)
@@ -28,6 +28,7 @@ def main_gui():
     
  
     image = Image.open("C:\_SourceCode\Prototipo\lena.jpg")
+    image = image.resize((350,350), Image.ANTIALIAS)
     photo = ImageTk.PhotoImage(image)
     w = Label(image=photo)
     w.image = photo
